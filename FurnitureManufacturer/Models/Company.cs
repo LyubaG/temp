@@ -65,6 +65,7 @@ namespace FurnitureManufacturer.Models
         public void Add(IFurniture furniture)
         {
             this.Furnitures.Add(furniture);
+            this.Furnitures = this.Furnitures.OrderBy(f => f.Price).ThenBy(f => f.Model).ToList();
         }
 
         public void Remove(IFurniture furniture)
@@ -97,7 +98,7 @@ namespace FurnitureManufacturer.Models
             {
                 foreach (var furn in this.Furnitures)
                 {
-                    sb.AppendLine(Environment.NewLine);
+                    sb.Append("\n");
                     sb.Append(furn.ToString()); 
                 }
             }

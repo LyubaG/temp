@@ -13,6 +13,7 @@ namespace FurnitureManufacturer.Models
         //•	Normal state returns the height to the initial one.
 	
         private readonly decimal InitialHeight;
+        private bool isConverted;
 
         public ConvertibleChair(string model, string material, decimal price, decimal height, int numLegs)
             : base(model, material, price, height, numLegs)
@@ -22,10 +23,10 @@ namespace FurnitureManufacturer.Models
 
         public bool IsConverted
         {
-            get { return this.IsConverted; }
+            get { return this.isConverted; }
             private set
             {
-                this.IsConverted = value;
+                this.isConverted = value;
             }
         }
 
